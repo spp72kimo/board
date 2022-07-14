@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="留言板" content="簡易留言板功能實做">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&amp;display=swap" rel="stylesheet">
+    <title>簡易留言板</title>
+    <link rel="stylesheet" href="../styles/style.css">
+  </head>
+  <body> 
+    <header>注意！本站為練習用網站，因教學用途刻意忽略資安的實作，註冊時請勿使用任何真實的帳號或密碼。</header>
+    <div class="board"> 
+      <nav> 
+        <ul> 
+          <li><a href="#">註冊</a></li>
+          <li><a href="#">登入</a></li>
+        </ul>
+      </nav>
+      <div class="logo"> 
+        <div class="text">Comments </div>
+      </div>
+      <div class="post_area">
+        <form action="handle_add_post.php" method="post">
+          <div class="post_author"> 
+            <label>暱稱：
+              <input type="text" name="author">
+            </label><span class="errMsg">錯誤訊息</span>
+          </div>
+          <div class="post_article">
+            <textarea name="article" cols="30" rows="5"></textarea>
+          </div>
+          <div class="post_button"> 
+            <button type="submit">發送 </button>
+          </div>
+        </form>
+      </div>
+      <hr>
+      <section> 
+        <div class="card">
+          <div class="author_avater"> </div>
+          <div class="content">
+            <div class="author_name">
+               Steven<span>2022-06-22 13:36:20</span></div>
+            <div class="article">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime vel ullam similique iste enim, quod porro tempore voluptates explicabo tempora?</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

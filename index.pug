@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="留言板" content="簡易留言板功能實做") 
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet")
+        title 簡易留言板
+        link(rel="stylesheet" href="../styles/style.css")
+    body 
+        header 注意！本站為練習用網站，因教學用途刻意忽略資安的實作，註冊時請勿使用任何真實的帳號或密碼。
+        .board 
+            nav 
+                ul 
+                    li
+                        a(href='#') 註冊
+                    li
+                        a(href='#') 登入
+            .logo 
+                .text Comments 
+            .post_area
+                form(action="handle_add_post.php", method="post")
+                    .post_author 
+                        label 暱稱：
+                            input(type="text", name="author")
+                        span.errMsg 錯誤訊息
+                    .post_article
+                        textarea(name="article", cols="30", rows="5")
+                    .post_button 
+                        button(type="submit") 發送 
+            hr
+            section 
+                .card
+                    .author_avater 
+                    .content
+                        .author_name 
+                            |Steven
+                            span 2022-06-22 13:36:20
+                        .article Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime vel ullam similique iste enim, quod porro tempore voluptates explicabo tempora?

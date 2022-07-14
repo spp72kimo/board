@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="留言板" content="簡易留言板功能實做") 
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet")
+        title 簡易留言板
+        link(rel="stylesheet" href="../styles/style.css")
+    body 
+        header 注意！本站為練習用網站，因教學用途刻意忽略資安的實作，註冊時請勿使用任何真實的帳號或密碼。
+        .board 
+            nav 
+                ul 
+                    li
+                        a(href='#') 登入
+                    li
+                        a(href='#') 首頁
+            .logo 
+                .text Comments 
+            .post_area
+                form(action="handle_register.php", method="post")
+                    .post_author 
+                        .input_content
+                            label(for='username') 名稱：
+                            input(type="text" name="username" id='username')
+                        .input_content 
+                            label(for='password') 密碼： 
+                            input(type='password' name='password' id='password')
+                        .input_content 
+                            label(for='email') 信箱： 
+                            input(type='email' name='email' id='email')
+                    .post_button 
+                        span.errMsg 錯誤訊息
+                        button(type="submit") 提交 
+            hr

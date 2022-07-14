@@ -1,0 +1,208 @@
+$base_font_size: 10px
+$color_blue: #7cc0d8
+$color_deep_blue: #2596be
+$color_red: #c53b3b
+$color_black: rgba(0, 0, 0, 0.8)
+$color_white: #ffffff
+$color_gray: #cccccc
+$color_yellow: #F4ECD6
+$color_green: #A7CAB1
+$color_logo_back: #88b7b5
+$color_head_text: #847996
+
+*
+    // border: 1px solid
+    // outline: 1px solid
+    box-sizing: border-box
+    font-family: 'Montserrat', 微軟正黑體, sans-serif
+    &::selection
+        background: #e4e6e8
+
+html, body
+    padding: 0
+    margin: 0
+    // background: $color_green
+
+a
+    text-decoration: none
+    color: $color_black
+    font-weight: bold
+    &:hover
+        text-decoration: underline
+
+button
+    border: 1px solid $color_head_text
+    border-radius: 5px
+    padding: 2px 15px
+    background: none
+    cursor: pointer
+    transition-duration: 0.2s
+    &:hover
+        background: $color_gray
+
+header
+    text-align: center
+    font-size: $base_font_size
+    font-weight: bold
+    color: $color_red
+
+.errMsg
+    margin-left: 10px
+    color: $color_red
+    font-weight: bold
+    // border-bottom: 1px solid $color_red
+
+.permission_alert
+    color: $color_red
+    font-weight: bold
+
+.hide
+    display: none
+
+.board
+    // background: $color_yellow
+    box-shadow: 10px -3px 30px $color_gray
+    margin: 20px auto
+    width: 500px
+    padding: 20px
+    border: 1px solid $color_gray
+    border-radius: 5px
+    nav
+        ul
+            display: flex
+            list-style-type: none
+            justify-content: end
+            li
+                padding-left: 10px
+                transition-duration: 0.5s
+    .logo
+        height: 100px
+        font-size: $base_font_size * 5
+        position: relative
+        margin-bottom: 10px
+        .text
+            position: absolute
+            bottom: 5px
+            color: $color_black
+            font-weight: bold
+            // left: 5px
+    .post_area
+        input, textarea, button
+            border: 1px solid $color_head_text
+            border-radius: 5px
+        input, textarea
+            padding: 3px 5px
+            &:focus
+                outline: 1px solid $color_head_text
+        .post_author, .post_article, .greeting
+            margin-bottom: 10px
+        .modify_nickname
+            margin-left: 10px
+            cursor: pointer
+            &:hover
+                text-decoration: underline
+
+        .post_author
+            .modify-nickname-button
+                margin-left: 10px
+        .post_article
+            textarea
+                width: 460px
+                resize: none
+        .post_button
+            position: relaive
+            display: flex
+            justify-content: end
+            span
+                margin-right: 30px
+                font-weight: bold
+            button
+                padding: 2px 15px
+                background: none
+                cursor: pointer
+                transition-duration: 0.2s
+                &:hover
+                    background: $color_gray
+            span.msg
+                margin-right: 0px
+
+    section
+        margin-top: 20px
+        .card
+            display: flex
+            margin-bottom: 30px
+            min-height: 80px
+            padding-left: 20px
+            .author_avater
+                min-width: 50px
+                height: 50px
+                background: $color_blue
+                border-radius: 50%
+                margin-right: 15px
+            .content
+                .author_name
+                    margin-bottom: 5px
+                    word-break: break-word
+                    span
+                        margin-left: 5px
+                        font-size: $base_font_size
+                    span.delete_comment
+                        margin-left: 2px
+                .article
+                    white-space: pre-line
+                    word-break: break-word
+                    max-width: 300px
+.post_area
+    .input_content
+        margin-bottom: 5px
+
+.page_info
+    text-align: center
+
+.page_nav
+    display: flex
+    justify-content: end
+    ul
+        display: flex
+        list-style-type: none
+        li
+            margin-right: 5px
+            border: 1px solid $color_gray
+            padding: 2px 5px
+
+.register_area
+    width: 300px
+    text-align: right
+    div
+        margin-bottom: 3px
+
+.member_admin
+    margin: 10px auto
+    position: relative
+    .table_header
+        font-size: $base_font_size * 2
+        padding: 5px
+    table, th, td
+        border: 0.5px solid
+        border-collapse: collapse
+        padding: 3px
+    table
+        margin: 0 auto
+        text-align: center
+        th
+            font-size: $base_font_size
+        tr
+            border-bottom: 1px solid
+        button
+            // padding: 2px 10px
+
+.add_user
+    width: 300px
+    margin: 0px auto
+    div
+        margin-bottom: 3px
+    .add_user_button
+        text-align: center
+    button
+        padding: 3px 20px
+        margin-top: 10px

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="留言板" content="簡易留言板功能實做" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <title>簡易留言板</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="board">
+      <div class="logo">
+        <div class="text">Comments</div>
+      </div>
+      <div class="post_area">
+        <div class="post_author hide">
+          <form action="handle_modify_nickname.php" method="post">
+            <label
+              >暱稱：
+              <input
+                type="text"
+                name="author"
+                value="<?php echo $nickname ?>"
+              />
+            </label>
+            <button class="modify-nickname-button" type="submit">修改</button>
+          </form>
+        </div>
+        <form action="handle_add_post.php" method="post">
+          <div class="post_article">
+            <textarea name="article" cols="30" rows="5"></textarea>
+          </div>
+          <div class="post_button">
+            <button type="submit">發送</button>
+          </div>
+        </form>
+      </div>
+      <hr />
+      <section></section>
+    </div>
+  </body>
+  <script>
+    // 取得留言板所有留言
+    const request = new XMLHttpRequest();
+    request.open("GET", "http://localhost/board/api_comments.php", true);
+
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+        let response = request.response;
+        let comments = JSON.parse(response).comments;
+
+        let section = document.querySelector("section");
+        for (let i = 0; i < comments.length; i++) {
+          let comment = comments[i];
+          let card = document.createElement("div");
+          card.classList.add("card");
+          card.innerHTML = ` <div class="author_avater"> </div>
+                      <div class="content">
+                      <div class="author_name">
+                          ${comment.username}
+                          <span>
+                          (@${comment.nickname})  ${comment.created_at}
+                          </span>
+                      <div class="article">${comment.article}</div>
+                      </div>`;
+          section.appendChild(card);
+        }
+      } else {
+        console.log("error");
+      }
+    };
+
+    request.onerror = function () {
+      console.log("err");
+    };
+
+    request.send();
+
+    // 新增留言
+    let post_button = document.querySelector(".post_button");
+    post_button.addEventListener("click", function (e) {
+      e.preventDefault();
+      let article = document.querySelector("textarea[name=article]").value;
+
+      const request = new XMLHttpRequest();
+      request.open("POST", "api_add_post.php", true);
+      request.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+      );
+      request.send("username=steven&article=" + encodeURIComponent(article));
+
+      request.onload = function () {
+        if (request.status >= 200 && request.status < 400) {
+          let resp = request.response;
+          let result = JSON.parse(resp);
+          if (result.status) {
+            location.reload();
+          } else {
+            alert(result.message);
+          }
+        } else {
+          console.log("error");
+        }
+      };
+
+      request.onerror = function () {
+        console.log("err");
+      };
+    });
+  </script>
+</html>

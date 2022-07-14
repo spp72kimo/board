@@ -1,0 +1,299 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', 微軟正黑體, sans-serif;
+}
+
+*::-moz-selection {
+  background: #e4e6e8;
+}
+
+*::selection {
+  background: #e4e6e8;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  border: 1px solid #847996;
+  border-radius: 5px;
+  padding: 2px 15px;
+  background: none;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+button:hover {
+  background: #cccccc;
+}
+
+header {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #c53b3b;
+}
+
+.errMsg {
+  margin-left: 10px;
+  color: #c53b3b;
+  font-weight: bold;
+}
+
+.permission_alert {
+  color: #c53b3b;
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.board {
+  -webkit-box-shadow: 10px -3px 30px #cccccc;
+          box-shadow: 10px -3px 30px #cccccc;
+  margin: 20px auto;
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.board nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.board nav ul li {
+  padding-left: 10px;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.board .logo {
+  height: 100px;
+  font-size: 50px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.board .logo .text {
+  position: absolute;
+  bottom: 5px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+
+.board .post_area input, .board .post_area textarea, .board .post_area button {
+  border: 1px solid #847996;
+  border-radius: 5px;
+}
+
+.board .post_area input, .board .post_area textarea {
+  padding: 3px 5px;
+}
+
+.board .post_area input:focus, .board .post_area textarea:focus {
+  outline: 1px solid #847996;
+}
+
+.board .post_area .post_author, .board .post_area .post_article, .board .post_area .greeting {
+  margin-bottom: 10px;
+}
+
+.board .post_area .modify_nickname {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.board .post_area .modify_nickname:hover {
+  text-decoration: underline;
+}
+
+.board .post_area .post_author .modify-nickname-button {
+  margin-left: 10px;
+}
+
+.board .post_area .post_article textarea {
+  width: 460px;
+  resize: none;
+}
+
+.board .post_area .post_button {
+  position: relaive;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.board .post_area .post_button span {
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.board .post_area .post_button button {
+  padding: 2px 15px;
+  background: none;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.board .post_area .post_button button:hover {
+  background: #cccccc;
+}
+
+.board .post_area .post_button span.msg {
+  margin-right: 0px;
+}
+
+.board section {
+  margin-top: 20px;
+}
+
+.board section .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+  min-height: 80px;
+  padding-left: 20px;
+}
+
+.board section .card .author_avater {
+  min-width: 50px;
+  height: 50px;
+  background: #7cc0d8;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.board section .card .content .author_name {
+  margin-bottom: 5px;
+  word-break: break-word;
+}
+
+.board section .card .content .author_name span {
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.board section .card .content .author_name span.delete_comment {
+  margin-left: 2px;
+}
+
+.board section .card .content .article {
+  white-space: pre-line;
+  word-break: break-word;
+  max-width: 300px;
+}
+
+.post_area .input_content {
+  margin-bottom: 5px;
+}
+
+.page_info {
+  text-align: center;
+}
+
+.page_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.page_nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+.page_nav ul li {
+  margin-right: 5px;
+  border: 1px solid #cccccc;
+  padding: 2px 5px;
+}
+
+.register_area {
+  width: 300px;
+  text-align: right;
+}
+
+.register_area div {
+  margin-bottom: 3px;
+}
+
+.member_admin {
+  margin: 10px auto;
+  position: relative;
+}
+
+.member_admin .table_header {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.member_admin table, .member_admin th, .member_admin td {
+  border: 0.5px solid;
+  border-collapse: collapse;
+  padding: 3px;
+}
+
+.member_admin table {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.member_admin table th {
+  font-size: 10px;
+}
+
+.member_admin table tr {
+  border-bottom: 1px solid;
+}
+
+.add_user {
+  width: 300px;
+  margin: 0px auto;
+}
+
+.add_user div {
+  margin-bottom: 3px;
+}
+
+.add_user .add_user_button {
+  text-align: center;
+}
+
+.add_user button {
+  padding: 3px 20px;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=style.css.map */
